@@ -1,4 +1,4 @@
-class Prato{
+class Alimento{
     constructor(nome, preco, categoria){ //modelo do objeto
         this.nome = nome //o this aponta e traz a info
         this.preco = preco
@@ -16,23 +16,24 @@ class Prato{
 
 //instanciando objetos
 const cardapio_comida = [ //lista
-    new Prato('Pão de Queijo', 7.00, 'Salgados'),
-    new Prato('Pão na Chapa', 5.50, 'Salgados'),
-    new Prato('Empada', 9.00, 'Salgados'),
-    new Prato('Quiche', , ''),
-    new Prato('Torrada', , ''),
-    new Prato('Croissant', , ''),
-    new Prato('Sanduíche Natural', , ''),
-    new Prato('Baguete', , ''),
-    new Prato('Misto Quente', , ''),
-    
+    new Alimento('Pão de Queijo', 7.00, 'Salgados'),
+    new Alimento('Pão na Chapa', 5.00, 'Salgados'),
+    new Alimento('Empada', 9.00, 'Salgados'),
+    new Alimento('Quiche', 10.00, 'Salgados'),
+    new Alimento('Torrada', 5.00, 'Salgados'),
+    new Alimento('Croissant', 8.00, 'Salgados'),
+    new Alimento('Sanduíche Natural', 8.00, 'Salgados'),
+    new Alimento('Baguete', 10.00, 'Salgados'),
+    new Alimento('Misto Quente', 7.00, 'Salgados'),
+
 ]
 
 const cardapio_bebida = [
-    new Prato('Chá', 7.00, 'Bebida'),
-    new Prato('Água Mineral', 3.00, 'Bebida'),
-    new Prato('Cappuccino Tradicional', 8.00, 'Bebida'),
-    new Prato('Cappuccino com Desenho', 13.00, 'Bebida')
+
+    new Alimento('Cappuccino Tradicional', 8.00, 'Bebida'),
+    new Alimento('Cappuccino com Desenho', 13.00, 'Bebida'),
+    new Alimento('Chá', 7.00, 'Bebida'),
+    new Alimento('Água Mineral', 3.00, 'Bebida'),
 ]
 
 console.log('=== Pratos ===') //mostra na tela
@@ -47,7 +48,7 @@ cardapio_bebida.forEach(b => {
 
 const containerCardapio = document.querySelector('#cardapio')
 
-function criarCardPrato(prato){
+function criarCardAlimento(prato){
     const card = document.createElement('div')
     card.className = 'card-prato col-12 col-md-6 col-lg-4 p-4 bg-white rounded-3 shadow-sm' //cria o nome da classe
 
@@ -76,12 +77,12 @@ function renderizarCardapio(){
     containerCardapio.innerHTML = ''
 
     cardapio_comida.forEach(prato => {
-        const card = criarCardPrato(prato)
+        const card = criarCardAlimento(prato)
 
         containerCardapio.appendChild(card)
     })
     cardapio_bebida.forEach(bebida => {
-        const card = criarCardPrato(bebida)
+        const card = criarCardAlimento(bebida)
 
         containerCardapio.appendChild(card)
     })
