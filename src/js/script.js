@@ -15,17 +15,34 @@ class Prato{
 } //fim da classe
 
 //instanciando objetos
-const cardapio = [ //lista
-    new Prato('Feijoada completa', 42.90, 'Prato Principal'),
-    new Prato('Moqueca de Peixe', 58.00, 'Prato Principal'),
-    new Prato('Coxinha Artesanal', 8.50, 'Petisco'),
-    new Prato('Brigadeiro Gourmet', 6.00, 'Sobremesa'),
-    new Prato('Morango do Amor (Pistache)', 15.00, 'Sobremesa')
+const cardapio_comida = [ //lista
+    new Prato('Pão de Queijo', 7.00, 'Salgados'),
+    new Prato('Pão na Chapa', 5.50, 'Salgados'),
+    new Prato('Empada', 9.00, 'Salgados'),
+    new Prato('Quiche', , ''),
+    new Prato('Torrada', , ''),
+    new Prato('Croissant', , ''),
+    new Prato('Sanduíche Natural', , ''),
+    new Prato('Baguete', , ''),
+    new Prato('Misto Quente', , ''),
+    
+]
+
+const cardapio_bebida = [
+    new Prato('Chá', 7.00, 'Bebida'),
+    new Prato('Água Mineral', 3.00, 'Bebida'),
+    new Prato('Cappuccino Tradicional', 8.00, 'Bebida'),
+    new Prato('Cappuccino com Desenho', 13.00, 'Bebida')
 ]
 
 console.log('=== Pratos ===') //mostra na tela
-cardapio.forEach(p => { //vai passar por cada item da lista
+cardapio_comida.forEach(p => { //vai passar por cada item da lista
     console.log(`${p.nome} → ${p.formatarPreco()}`) //mostra os itens da lista na tela
+})
+
+console.log('=== Drinks ===')
+cardapio_bebida.forEach(b => {
+    console.log(`${b.nome} → ${b.formatarPreco()}`)
 })
 
 const containerCardapio = document.querySelector('#cardapio')
@@ -58,8 +75,13 @@ function criarCardPrato(prato){
 function renderizarCardapio(){
     containerCardapio.innerHTML = ''
 
-    cardapio.forEach(prato => {
+    cardapio_comida.forEach(prato => {
         const card = criarCardPrato(prato)
+
+        containerCardapio.appendChild(card)
+    })
+    cardapio_bebida.forEach(bebida => {
+        const card = criarCardPrato(bebida)
 
         containerCardapio.appendChild(card)
     })
@@ -67,5 +89,7 @@ function renderizarCardapio(){
 
 renderizarCardapio()
 
-cardapio[0].aplicarDesconto(20)
+/* caso queira aplicar desconto:
+
+cardapio_comida[0].aplicarDesconto(20) */
 renderizarCardapio()
