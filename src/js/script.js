@@ -1,8 +1,9 @@
 class Alimento{
-    constructor(nome, preco, categoria){ //modelo do objeto
+    constructor(nome, preco, categoria, imagem){ //modelo do objeto
         this.nome = nome //o this aponta e traz a info
         this.preco = preco
         this.categoria = categoria
+        this.imagem = imagem
     }
 
     formatarPreco(){ //verbo, acao que vai executar
@@ -16,30 +17,30 @@ class Alimento{
 
 //instanciando objetos
 const cardapio_comida = [ //lista
-    new Alimento('Pão de Queijo', 7.00, 'Salgados'),
-    new Alimento('Pão na Chapa', 5.00, 'Salgados'),
-    new Alimento('Empada', 9.00, 'Salgados'),
-    new Alimento('Quiche', 10.00, 'Salgados'),
-    new Alimento('Torrada', 5.00, 'Salgados'),
-    new Alimento('Croissant', 8.00, 'Salgados'),
-    new Alimento('Sanduíche Natural', 8.00, 'Salgados'),
-    new Alimento('Baguete', 10.00, 'Salgados'),
-    new Alimento('Misto Quente', 7.00, 'Salgados'),
-    new Alimento('Fatia de Bolo', 12.00, 'Doces'),
-    new Alimento('Brownie', 8.00, 'Doces'),
-    new Alimento('Cookies', 14.00, 'Doces'),
-    new Alimento('Cheesecake', 20.00, 'Doces'),
-    new Alimento('Torta', 28.00, 'Doces'),
-    new Alimento('Palha Italiana', 13.00, 'Doces'),
-    new Alimento('Brigadeiro Grande', 8.00, 'Doces')
+    new Alimento('Pão de Queijo', 7.00, 'Salgados', 'src/img/'),
+    new Alimento('Pão na Chapa', 5.00, 'Salgados', 'src/img/'),
+    new Alimento('Empada', 9.00, 'Salgados', 'src/img/'),
+    new Alimento('Quiche', 10.00, 'Salgados', 'src/img/'),
+    new Alimento('Torrada', 5.00, 'Salgados', 'src/img/'),
+    new Alimento('Croissant', 8.00, 'Salgados', 'src/img/'),
+    new Alimento('Sanduíche Natural', 8.00, 'Salgados', 'src/img/'),
+    new Alimento('Baguete', 10.00, 'Salgados', 'src/img/'),
+    new Alimento('Misto Quente', 7.00, 'Salgados', 'src/img/'),
+    new Alimento('Fatia de Bolo', 12.00, 'Doces', 'src/img/'),
+    new Alimento('Brownie', 8.00, 'Doces', 'src/img/'),
+    new Alimento('Cookies', 14.00, 'Doces', 'src/img/'),
+    new Alimento('Cheesecake', 20.00, 'Doces', 'src/img/'),
+    new Alimento('Torta', 28.00, 'Doces', 'src/img/'),
+    new Alimento('Palha Italiana', 13.00, 'Doces', 'src/img/'),
+    new Alimento('Brigadeiro Grande', 8.00, 'Doces', 'src/img/')
 ]
 
 const cardapio_bebida = [
 
-    new Alimento('Cappuccino Tradicional', 8.00, 'Bebida'),
-    new Alimento('Cappuccino com Desenho', 13.00, 'Bebida'),
-    new Alimento('Chá', 7.00, 'Bebida'),
-    new Alimento('Água Mineral', 3.00, 'Bebida'),
+    new Alimento('Cappuccino Tradicional', 8.00, 'Bebida', 'src/img/'),
+    new Alimento('Cappuccino com Desenho', 13.00, 'Bebida', 'src/img/'),
+    new Alimento('Chá', 7.00, 'Bebida', 'src/img/'),
+    new Alimento('Água Mineral', 3.00, 'Bebida', 'src/img/'),
 ]
 
 console.log('=== Pratos ===') //mostra na tela
@@ -60,6 +61,7 @@ function criarCardAlimento(prato){
 
     card.innerHTML = 
     `
+    <img src="${prato.imagem}" alt="${prato.nome}" class="img-fluid rounded-3 mb-3">
     <h3 class="fs-4 fw-bold text-dark mb-2">${prato.nome}</h3>
     <span class='categoria fs-6 d-block mb-3'>${prato.categoria}</span>
     <div class='preco fs-5 fw-bold text-success'>${prato.formatarPreco()}</div>
