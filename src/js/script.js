@@ -25,7 +25,13 @@ const cardapio_comida = [ //lista
     new Alimento('Sanduíche Natural', 8.00, 'Salgados'),
     new Alimento('Baguete', 10.00, 'Salgados'),
     new Alimento('Misto Quente', 7.00, 'Salgados'),
-
+    new Alimento('Fatia de Bolo', 12.00, 'Doces'),
+    new Alimento('Brownie', 8.00, 'Doces'),
+    new Alimento('Cookies', 14.00, 'Doces'),
+    new Alimento('Cheesecake', 20.00, 'Doces'),
+    new Alimento('Torta', 28.00, 'Doces'),
+    new Alimento('Palha Italiana', 13.00, 'Doces'),
+    new Alimento('Brigadeiro Grande', 8.00, 'Doces')
 ]
 
 const cardapio_bebida = [
