@@ -1,15 +1,3 @@
-/* ============================================================
-   TechFood — style.css (Bootstrap)
-
-   Regra da aula: este arquivo deve ficar com o MÍNIMO possível.
-   Tudo que o Bootstrap cobre, não colocamos aqui.
-   Se uma classe Bootstrap já resolve, usamos ela no HTML.
-
-   O que FICA aqui:
-   - Fonte personalizada (Bootstrap usa system-ui por padrão)
-   - Efeito de hover no card (Bootstrap não faz hover de lift)
-   - Cor de categoria (marrom do restaurante — não é uma cor do Bootstrap)
-   ============================================================ */
 
 h1 {
     font-family: cursive;
@@ -28,8 +16,7 @@ body {
   transform: translateY(-4px);
 }
 
-/* Cor personalizada da categoria — marrom quente do restaurante.
-   Bootstrap tem text-warning (amarelo) mas não este marrom específico. */
+/* Cor personalizada da categoria*/
 .categoria {
-  color: #8B4513;
+  color: #f7d200;
 }
