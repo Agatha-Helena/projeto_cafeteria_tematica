@@ -11,7 +11,9 @@
   <nav class="navbar navbar-expand-lg bg-info bg-gradient
  navbar-dark">
     <div class="container">
-      <h1 class="navbar-brand fw-bold fs-4" href="#"> Minduim</h1>
+      <h1 class="m-0">
+        <a class="navbar-brand fw-bold fs-3 mb-0" href="#topo">Minduim</a>
+      </h1>
       <button class="navbar-toggler" type="button"
               data-bs-toggle="collapse" data-bs-target="#menu"
               aria-controls="menu" aria-expanded="false" aria-label="Menu">
@@ -20,26 +22,48 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-        </ul>
       </div>
     </div>
   </nav>
   
        
   <main class="container">
-    <h2 class="text-center mb-4">Nosso Cardápio</h2>
-
+    <h2 class=" section-title text-center mb-4">Nosso Cardápio</h2>
+    <div class="filtros d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="Filtrar cardápio por categoria">
+        <button type="button" class="btn-filtro active" data-filtro="Todos">Todos</button>
+        <button type="button" class="btn-filtro" data-filtro="Salgados">Salgados</button>
+        <button type="button" class="btn-filtro" data-filtro="Doces">Doces</button>
+        <button type="button" class="btn-filtro" data-filtro="Bebida">Bebidas</button>
+    </div>
+    <div id="cardapio-grid" class="row g-3"></div>
     <section id="cardapio" class="row g-3">
     </section>
 
     <hr class="my-5">
+    
+    
+  </main>
     
   </main>
 
   <footer class="text-center text-muted py-4 mt-5">
     <small>Somativa 2 Bootstrap · Prof. Marlon</small>
   </footer>
+   <div class="modal fade" id="modalItem" tabindex="-1" aria-labelledby="modalItemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalItemLabel"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalItemImg" src="" alt="" class="img-fluid rounded-3 mb-3">
+          <p class="mb-1"><span id="modalItemCategoria" class="badge-categoria"></span></p>
+          <p class="fs-4 fw-bold text-brand mb-0" id="modalItemPreco"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/js/script.js" defer></script>
