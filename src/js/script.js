@@ -98,7 +98,4 @@ function renderizarCardapio(){
 
 renderizarCardapio()
 
-/* caso queira aplicar desconto:
 
-cardapio_comida[0].aplicarDesconto(20) */
-renderizarCardapio()
